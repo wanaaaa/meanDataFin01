@@ -162,7 +162,7 @@ $(function(){
     text = $(selIDnum).html();
 
     console.log(text);
-    $.get("http://localhost:3000/send", {
+    $.get("http://damp-fjord-8597.herokuapp.com/send", {
       to:to, subject:subject, text:text
     }, function(data) {
       console.log(data);
