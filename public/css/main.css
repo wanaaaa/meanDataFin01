@@ -1,0 +1,14 @@
+body {
+	background-color:;
+}
+
+html, body, #map_canvas {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px
+}
+
+.address:hover {
+	color: red
+}

@@ -1,0 +1,25 @@
+{
+  "name": "mean",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "bootstrap": "^3.3.5",
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "express-ejs-layouts": "^2.0.0",
+    "express-session": "^1.12.1",
+    "method-override": "^2.3.5",
+    "mongodb": "^2.0.48",
+    "mongoose": "^4.2.6",
+    "morgan": "^1.6.1",
+    "nodemailer": "^1.10.0"
+  }
+}

@@ -1,0 +1,41 @@
+
+	<h5>This is h5</h5>
+	<div ng-app="myApp" ng-controller="customersCtrl">
+	
+	<h3>Please, input jobs you are looking for</h3>
+	<form ng-submit="submitJob()">		
+		<input type='text' ng-model="jobTitle"/>
+		<input type="submit" value="Submit"/>
+	</form>
+	<button ng-click="saveSearch()">Save me</button><br><br>
+	<a href="/jobs/detail">asdfasdfas</a>
+
+	<table class='table-bordered'>
+		<tr>
+			<th>Position Title</th>
+			<th>Organization Name</th>
+			<th>Minimum Wage</th>
+			<th>Maximum Wage</th>
+			<th>Start Date</th>
+			<th>End Date</th>
+			<th>Location</th>
+			<th>Web Site</th>
+			<th>Click to Save</th>
+		</tr>
+		<tr ng-repeat="job in jobs">
+		<!-- <tr ng-repeat="x in names | orderBy : 'Country' "> -->
+			<div >
+				<td>{{job.position_title}}</td>		
+				<td>{{job.organization_name}}</td>		
+				<td>{{job.minimum}}</td>		
+				<td>{{job.maximum}}</td>		
+				<td>{{job.start_date}}</td>		
+				<td>{{job.end_date}}</td>		
+				<td>{{job.locations.toString()}}</td>		
+				<td><a href="{{job.url}}">Link</a></td>	
+				<td class="jobSel"><span class='jobb' id="job">{{job}}</span></td>	
+			</div>
+		</tr>	
+	</table>
+
+</div>
