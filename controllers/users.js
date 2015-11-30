@@ -2,7 +2,7 @@ var express = require('express'),
 	router = express.Router(),
 	User = require('../models/user.js');
 
-router.get('/new', function (req, res) {
+router.get('/', function (req, res) {
 	res.render('users/new');
 	// res.render('posts/``new'); 
 });
@@ -16,7 +16,7 @@ router.post('/post', function (req, res) {
 			console.log(err);
 		} else {
 			console.log("Saving user", userObject);
-			res.redirect(301, '/new');
+			res.redirect(301, '/users/new');
 		}
 	})
 });
@@ -33,7 +33,7 @@ router.post('/login', function (req, res) {
 			console.log("User loggin")
 			res.redirect(301, "/jobs/index");
 		} else {
-			res.redirect(301, '/');
+			res.redirect(301, '/users/new');
 		}
 	})
 });

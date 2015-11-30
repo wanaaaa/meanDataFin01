@@ -1,23 +1,27 @@
 
+<div class="col-sm-4 col-md-8"><div>
+<div class="col-sm-4 col-md-4">
+	<h4>Sign up for our site!</h4>
+	<form action="/users/post" method="POST">
+		<input type="text" 
+						name="user[username]"
+						placeholder="username">
+		<input type="password"
+						name="user[password]"
+						placeholder="password">
+		<input type="submit" value="Sign Up!">
+	</form>
 
-<h1>Sign up for our site!</h1>
-<form action="/users/post" method="POST">
-	<input type="text" 
-					name="user[username]"
-					placeholder="username">
-	<input type="password"
-					name="user[password]"
-					placeholder="password">
-	<input type="submit" value="Sign Up!">
-</form>
+	<h4>Sign in</h4>
+	<form action="/users/login" method="post">
+		<input type="text" 
+						name="user[username]"
+						placeholder="username">
+		<input type="password"
+						name="user[password]"
+						placeholder="password">
+		<input type="submit" value="Log in!">
+	</form>
+</div>
 
-<h1>Sign in</h1>
-<form action="/users/login" method="post">
-	<input type="text" 
-					name="user[username]"
-					placeholder="username">
-	<input type="password"
-					name="user[password]"
-					placeholder="password">
-	<input type="submit" value="Log in!">
-</form>
+
