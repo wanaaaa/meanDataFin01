@@ -1,11 +1,17 @@
+var PORT = process.env.PORT || 3000,
+  MONGOURI = process.env.MONGOLAB_URI || "mongodb://localhost:27017";
+  
 var express     = require('express'),
 	  expressLayouts  = require('express-ejs-layouts'),
     ejs = require('ejs'),
     session = require('express-session'),
     server      = express(),
     bodyParser  = require('body-parser'),
-    methodOverride = require('method-override'),
-    PORT		    = 3000,
+    methodOverride = require('method-override');
+
+
+
+    // PORT		    = 3000,
     mongoose    = require('mongoose');
     // mongodb     = require('mongodb');
     // MongoClient = mongodb.MongoClient,
@@ -82,8 +88,23 @@ server.get('/send', function(req, res) {
  
 }); //End of server.get
 
-mongoose.connect('mongodb://localhost:27017/meanData');
 
-server.listen(PORT, function(){
-  console.log("Server is listening");
+mongoose.connect(MONGOURI);
+var db = mongoose.connection;
+
+db.on('error', function () {
+  console.log("Database errors");
 });
+
+db.once('open', function () {
+  console.log("Database up and running");
+  server.listen(PORT, function () {
+    console.log("server up and running");
+  })
+})
+
+// mongoose.connect('mongodb://localhost:27017/meanData');
+
+// server.listen(PORT, function(){
+//   console.log("Server is listening");
+// });
