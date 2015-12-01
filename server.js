@@ -58,7 +58,7 @@ server.use('/jobs', jobController);
 server.get('/', function (req, res) {
   // res.render('jobs/detail');
   // res.render('users/new');
-  res.redirect(301, '/users/new')
+  res.redirect(301, '/users')
 });
 
 // server.get('/', function (req, res) {

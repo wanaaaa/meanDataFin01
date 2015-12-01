@@ -31,7 +31,7 @@ router.post('/login', function (req, res) {
 			req.session.currentUser = foundUser.username;
 			console.log(req.session.currentUser);
 			console.log("User loggin")
-			res.redirect(301, "/jobs/index");
+			res.redirect(301, "/jobs/detail");
 		} else {
 			res.redirect(301, '/users/new');
 		}

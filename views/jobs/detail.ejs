@@ -1,55 +1,75 @@
-<div id="map_canvas" style="border: 2px solid #3872ac; height: 50%; width: 50% "></div><br>
+<div class="row" style="border: 2px solid #3872ac; height: 35%; width: 67%; margin-left: 16%" >	
+	<div class="col-sm-6 col-md-6" style="height: 100%; width: 100%;  " id="map_canvas">
+	</div>
+</div>
+
+<div class="row" >	
+	<div class="col-sm-2 col-md-2"></div>
+	<div class="col-sm-8 col-md-8">
+		<h3>Please, input your e-mail address to send e-mail</h3>
+
+		<div class="row">
+			<div class="col-md-3">
+	  		<label for="emailInput">Type your email to send</label>
+	  		<input class="form-control" id="emailInput" type="text">
+			</div>
+		</div><br>
+		
+		<a href="/jobs/index">Back to search</a>
+		<table class='table-bordered'>
+			<tr>
+				<th>User Name</th>
+				<th>Job Name</th>
+				<th>Title & Organization</th>
+				<th>Duration & Payment</th>
+				<th>Average wages</th>
+				<th>Click to show <br>location in map</th>
+				<th>Send me e-mail</th>
+				<th>Delete</th>
+			</tr>
+			<% jobsObjects.forEach(function(object, i) { %>
+				<tr >
+					<td ><%= object.userName %></td>		
+					<td ><%= object.jobName %></td>
+							<p class="hide"><%= oneJobJSON = object.selectedList[0] %>	
+							<%= oneJobObject = JSON.parse(oneJobJSON) %></p>
+					<td id="a<%= i %>">Title: <%= oneJobObject.position_title %> <br>
+							Organization: <%= oneJobObject.organization_name %> <br>
+							<a href="<%= oneJobObject.url %>">Link to the posting</a> 
+					</td>
+					<td>Duration: <%= oneJobObject.start_date %> ~ <%= oneJobObject.end_date %><br>
+							<strong>Payment</strong><br>
+							minimum: $ <%= oneJobObject.minimum %><br>
+							maximum: $ <%= oneJobObject.maximum %>
+					</td>		
+						<% object.joblist %>
+							<% index = "" %>
+							<%	min = 0, max = 0 %>
+							<% object.joblist.forEach(function(oobje, j) { %>
+							 <%	min += oobje.minimum %>
+							 <% max += oobje.maximum %><% index = j %>
+							<% }) %>
+					<td>min: $ <%= min/(index+ 1) %> <br>
+							max: $ <%= max/(index+ 1) %>
+					</td>
+					<td class="address"><%= [oneJobObject.locations] %></td>
+					<td><button class="email" iter=<%= i %> >Click to email</button></td>
+					<td>
+						<form action="/jobs/<%= object._id %>?_method=DELETE" method="post">
+							<input type="submit" value="delete">	
+						</form>
+					</td>
+				</tr>		
+			<% }) %>				
+		</table>
+
+
+
+	</div>
+</div>
 
 <h2 class='test'></h2>
 
-<h3>Please, input your e-mail address to send e-mail</h3>
 
-<input id="emailInput" type="text"> 
 
-<table class='table-bordered'>
-	<tr>
-		<th>User Name</th>
-		<th>Job Name</th>
-		<th>Title & Organization</th>
-		<th>Duration & Payment</th>
-		<th>Average wages</th>
-		<th>Click to show <br>location in map</th>
-		<th>Send me e-mail</th>
-		<th>Delete</th>
-	</tr>
-	<% jobsObjects.forEach(function(object, i) { %>
-		<tr >
-			<td ><%= object.userName %></td>		
-			<td ><%= object.jobName %></td>
-					<p class="hide"><%= oneJobJSON = object.selectedList[0] %>	
-					<%= oneJobObject = JSON.parse(oneJobJSON) %></p>
-			<td id="a<%= i %>">Title: <%= oneJobObject.position_title %> <br>
-					Organization: <%= oneJobObject.organization_name %> <br>
-					<a href="<%= oneJobObject.url %>">Link to the posting</a> 
-			</td>
-			<td>Duration: <%= oneJobObject.start_date %> ~ <%= oneJobObject.end_date %><br>
-					<strong>Payment</strong><br>
-					minimum: $ <%= oneJobObject.minimum %><br>
-					maximum: $ <%= oneJobObject.maximum %>
-			</td>		
-				<% object.joblist %>
-					<% index = "" %>
-					<%	min = 0, max = 0 %>
-					<% object.joblist.forEach(function(oobje, j) { %>
-					 <%	min += oobje.minimum %>
-					 <% max += oobje.maximum %><% index = j %>
-					<% }) %>
-			<td>min: $ <%= min/(index+ 1) %> <br>
-					max: $ <%= max/(index+ 1) %>
-			</td>
-			<td class="address"><%= [oneJobObject.locations] %></td>
-			<td><button class="email" iter=<%= i %> >Click to email</button></td>
-			<td>
-				<form action="/jobs/<%= object._id %>?_method=DELETE" method="post">
-					<input type="submit" value="delete">	
-				</form>
-			</td>
-		</tr>		
-	<% }) %>				
-</table>
 
