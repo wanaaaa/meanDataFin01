@@ -12,3 +12,12 @@ html, body, #map_canvas {
 .address:hover {
 	color: red
 }
+
+body {
+	background-image: url('../image/job04.jpg');
+	background-size: 15% 15%;
+}
+
+.backWhite  {
+	background-color: white;
+}
