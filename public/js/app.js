@@ -198,6 +198,7 @@ $(function(){
       dataArray.push($(this).html());
     })
     console.log("dataset========",dataArray);
+    $('#ggraph').html("");
     graph01(dataArray);
 	});
 

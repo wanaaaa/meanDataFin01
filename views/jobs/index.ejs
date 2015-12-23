@@ -1,17 +1,17 @@
 <div class="col-sm-10 col-md-10">
 	<div ng-app="myApp" ng-controller="customersCtrl">
 	
-	<h3>Please, input jobs you are looking for</h3>
+	<h3 class="backWhite">Please, input jobs you are looking for</h3>
 	<form ng-submit="submitJob()">		
 		<input type='text' ng-model="jobTitle"/>
 		<input type="submit" value="Submit"/>
 	</form>
 	<button ng-click="saveSearch()">Save me</button>
-	<a href="/jobs/detail">Click me to see detail</a><br>
+	<a href="/jobs/detail" class="backWhite">Click me to see detail</a><br>
 
   <div id="ggraph"></div>
 
-	<h4>This job will be saved :</h4><h5>Job is not yet selected</h5>
+	<h4 class="backWhite">This job will be saved :</h4><h5 class="backWhite">Job is not yet selected</h5>
 
 
 	<table class='table-bordered backWhite'>
@@ -43,3 +43,4 @@
 	</table>
 	</div>
 </div>
+

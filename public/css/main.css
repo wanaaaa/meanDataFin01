@@ -14,10 +14,12 @@ html, body, #map_canvas {
 }
 
 body {
-	background-image: url('../image/job04.jpg');
+	background-image: url('../image/job04a.jpg');
 	background-size: 15% 15%;
 }
 
+
 .backWhite  {
 	background-color: white;
+	display:inline-block;
 }
