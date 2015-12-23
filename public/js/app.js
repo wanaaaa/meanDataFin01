@@ -27,6 +27,8 @@ svg.selectAll("rect")
    .attr("x", function(d, i) {
       return xScale(i);
    })
+   .transition()
+   .duration(50000)
    .attr("y", function(d) {
       return h - yScale(d);
    })
