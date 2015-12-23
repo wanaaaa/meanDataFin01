@@ -99,7 +99,6 @@ app.controller('customersCtrl', function($scope, $http) {
 	  .success(function(response) {
 	  	console.log(response)
 	  	$scope.jobs = response;
-
 	  }).error(function(error){
 	  	console.log(error)
 	  })
@@ -194,6 +193,10 @@ $(function(){
 	$('div').on("click",".jobb",  function(){
 		var jobbToSave = $(this).html();
 		$('h5').html(jobbToSave);
+    $('#tr .min').each(function() {
+      var data01 = $(this).html();
+      console.log(data01);
+    })
 	});
 
   $('.address').on("click", this, function() {
@@ -229,6 +232,8 @@ $(function(){
       console.log(data);
     })
   })
+
+
 
 })
 

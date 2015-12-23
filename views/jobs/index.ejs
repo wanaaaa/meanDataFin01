@@ -8,13 +8,13 @@
 	</form>
 	<button ng-click="saveSearch()">Save me</button>
 	<a href="/jobs/detail">Click me to see detail</a><br>
-	
+
   <div id="ggraph"></div>
 
 	<h4>This job will be saved :</h4><h5>Job is not yet selected</h5>
 
 
-	<table class='table-bordered'>
+	<table class='table-bordered backWhite'>
 		<tr>
 			<th>Position Title</th>
 			<th>Organization Name</th>
@@ -26,12 +26,12 @@
 			<th>Web Site</th>
 			<th>Click to Save</th>
 		</tr>
-		<tr ng-repeat="job in jobs">
+		<tr ng-repeat="job in jobs" id="tr">
 		<!-- <tr ng-repeat="x in names | orderBy : 'Country' "> -->
 			<div >
 				<td>{{job.position_title}}</td>		
 				<td>{{job.organization_name}}</td>		
-				<td>{{job.minimum}}</td>		
+				<td class="min">{{job.minimum}}</td>		
 				<td>{{job.maximum}}</td>		
 				<td>{{job.start_date}}</td>		
 				<td>{{job.end_date}}</td>		
