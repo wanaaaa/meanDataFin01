@@ -1,10 +1,11 @@
 //////////////////////////// Graph Start
+function graph01 (dataset) {
       //Width and height
 var w = 600;
 var h = 250;
 
-var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
-        11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
+// var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
+//         11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
 
 var xScale = d3.scale.ordinal()
         .domain(d3.range(dataset.length))
@@ -54,8 +55,7 @@ svg.selectAll("text")
    .attr("font-family", "sans-serif")
    .attr("font-size", "11px")
    .attr("fill", "white");
-
-
+};
 //////////////////////////// Graph end
 
 var app = angular.module('myApp', []);
@@ -193,10 +193,12 @@ $(function(){
 	$('div').on("click",".jobb",  function(){
 		var jobbToSave = $(this).html();
 		$('h5').html(jobbToSave);
+    var dataArray = [];
     $('#tr .min').each(function() {
-      var data01 = $(this).html();
-      console.log(data01);
+      dataArray.push($(this).html());
     })
+    console.log("dataset========",dataArray);
+    graph01(dataArray);
 	});
 
   $('.address').on("click", this, function() {
