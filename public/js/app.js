@@ -126,7 +126,7 @@ function createMarker(results) {
   return marker;
 }
 
-// Google Map ends
+// Google Map ends.
 
 
 $(function(){
